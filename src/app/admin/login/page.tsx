@@ -3,6 +3,8 @@ import { redirect } from "next/navigation";
 import { getCurrentAdmin } from "@/server/auth/current";
 import { LoginForm } from "./login-form";
 
+export const dynamic = "force-dynamic";
+
 export const metadata: Metadata = {
   title: "Entrar al panel",
   robots: { index: false, follow: false },
