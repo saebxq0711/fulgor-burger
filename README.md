@@ -159,6 +159,22 @@ Funciona en cualquier host de Node con PostgreSQL. Ejemplo con **Vercel + Neon**
 4. Crea el administrador: `DATABASE_URL=… DATABASE_SSL=true pnpm admin:create`.
 5. Despliega. `vercel.json` ya programa la tarea semanal (Vercel envía `CRON_SECRET` automáticamente).
 
+### Supabase (configuración actual)
+
+- Usa la cadena del **Session pooler** (IPv4): `postgresql://postgres.<ref>:<contraseña>@aws-…pooler.supabase.com:5432/postgres`.
+  Si la contraseña tiene caracteres especiales, codifícalos (`%40` para `@`, etc.).
+- `DATABASE_SSL=true` y `DATABASE_CA_CERT` con la CA de Supabase (*Supabase Root 2021 CA*,
+  Project Settings → Database → SSL Configuration → Download certificate). La conexión queda
+  cifrada **y verificada**. En Vercel pega el PEM tal cual o en una sola línea con los saltos escritos como `\n`.
+- `DATABASE_POOL_MAX=3`: cada instancia serverless abre su propio pool. Si ves "too many
+  clients", cambia al *Transaction pooler* (puerto `6543`); la app no usa sentencias preparadas
+  con nombre, así que es compatible.
+- El archivo local `.env.production` (no versionado) tiene todas las variables de producción
+  listas para copiar en Vercel. `pnpm dev` sigue usando `.env` (base local).
+- Primera vez: `node --env-file=.env.production scripts/migrate.mjs`, luego
+  `pnpm exec tsx --env-file=.env.production --conditions=react-server scripts/seed.ts` y
+  `pnpm exec tsx --env-file=.env.production --conditions=react-server scripts/create-admin.ts`.
+
 Servidor propio (VPS/Docker): `pnpm install --frozen-lockfile && pnpm db:migrate && pnpm build && pnpm start`
 detrás de un proxy HTTPS (Caddy, Nginx) que envíe `X-Forwarded-For`, y el cron del apartado anterior.
 
