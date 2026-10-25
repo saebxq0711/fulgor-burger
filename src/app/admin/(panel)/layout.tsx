@@ -4,6 +4,9 @@ import { AdminNav } from "@/components/admin/admin-nav";
 import { requireAdmin } from "@/server/auth/current";
 import { logoutAction } from "../actions";
 
+// El panel depende de la sesión y de la base en cada solicitud: nunca se prerenderiza.
+export const dynamic = "force-dynamic";
+
 export const metadata: Metadata = {
   title: { default: "Panel", template: "%s · Panel Fulgor" },
   robots: { index: false, follow: false },

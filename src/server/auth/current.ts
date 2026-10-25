@@ -30,7 +30,11 @@ export async function readSessionToken() {
 
 /** Usuario de la sesión actual, validado contra la base (una vez por solicitud). */
 export const getCurrentAdmin = cache(async (): Promise<SessionUser | null> => {
-  return userForSessionToken(getDb(), await readSessionToken());
+  // Primero la cookie (marca la ruta como dinámica) y solo después la base: así el build
+  // nunca intenta conectarse a PostgreSQL al prerenderizar el panel.
+  const token = await readSessionToken();
+  if (!token) return null;
+  return userForSessionToken(getDb(), token);
 });
 
 /** Para páginas: redirige al inicio de sesión si no hay sesión válida. */
