@@ -29,6 +29,8 @@ export default defineConfig({
     reuseExistingServer: false,
     env: {
       DATABASE_URL: TEST_DB,
+      // La base de pruebas es local y sin TLS (anula lo que traiga .env.production).
+      DATABASE_SSL: "false",
       APP_SECRET: "secreto-e2e-solo-para-pruebas-0123456789abcdef",
       CRON_SECRET: "cron-e2e-0123456789abcdef",
       NEXT_PUBLIC_SITE_URL: `http://localhost:${PORT}`,

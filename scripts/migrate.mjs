@@ -11,10 +11,15 @@ if (!url) {
   process.exit(1);
 }
 
+// Misma regla de TLS que src/server/db/client.ts (databaseSsl).
+const ca = process.env.DATABASE_CA_CERT?.replace(/\\n/g, "\n").trim();
 const pool = new pg.Pool({
   connectionString: url,
   max: 1,
-  ssl: process.env.DATABASE_SSL === "true" ? { rejectUnauthorized: process.env.DATABASE_SSL_REJECT_UNAUTHORIZED !== "false" } : undefined,
+  ssl:
+    process.env.DATABASE_SSL === "true"
+      ? { rejectUnauthorized: process.env.DATABASE_SSL_REJECT_UNAUTHORIZED !== "false", ...(ca ? { ca } : {}) }
+      : undefined,
 });
 
 try {
