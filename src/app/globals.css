@@ -1,0 +1,295 @@
+@import "tailwindcss";
+
+/*
+ * Tokens de marca de Fulgor Burger.
+ * Los dos colores de identidad salen del logo oficial (public/brand/originales):
+ *   mostaza #F5B82E y café #3B2218. El resto son pasos derivados de ellos.
+ * Cambia aquí los valores y toda la interfaz los hereda.
+ */
+@theme {
+  --font-sans: var(--font-rubik), ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  /* Identidad (logo) */
+  --color-mustard: #f5b82e;
+  --color-mustard-deep: #dfa216;
+  --color-coffee: #3b2218;
+
+  /* Sala pública: fondo café profundo y tinta crema */
+  --color-room: #1c0f09;
+  --color-room-2: #28160e;
+  --color-room-3: #3b2218;
+  --color-ember: #5e3d29;
+  /* Borde de controles sobre la sala: >= 3:1 (WCAG 1.4.11) contra room y room-2 */
+  --color-ember-line: #8a6a52;
+  --color-cream: #f7ecdf;
+  --color-cream-dim: #cfbba6;
+  /* Errores sobre la sala oscura (contraste > 7:1) */
+  --color-alert: #ffae9c;
+
+  /* Panel administrativo: neutros cálidos claros */
+  --color-paper: #f8f7f5;
+  --color-panel: #ffffff;
+  --color-line: #e8e3de;
+  --color-line-strong: #d3cbc3;
+  --color-ink: #20150f;
+  --color-ink-soft: #6a5d54;
+  --color-tint: #f2eee9;
+
+  /* Estados */
+  --color-ok: #23704a;
+  --color-ok-tint: #e3f2e9;
+  --color-warn: #8a5300;
+  --color-warn-tint: #fdf0d3;
+  --color-danger: #b3261e;
+  --color-danger-tint: #fbe5e3;
+  --color-info: #2f5d8a;
+  --color-info-tint: #e4eef8;
+
+  /* Movimiento (curvas de Emil Kowalski) */
+  --ease-out-strong: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-in-out-strong: cubic-bezier(0.77, 0, 0.175, 1);
+  --ease-drawer: cubic-bezier(0.32, 0.72, 0, 1);
+
+  --radius-pill: 999px;
+}
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+  }
+
+  body {
+    min-height: 100dvh;
+    font-feature-settings: "kern";
+  }
+
+  /* Tabular en cifras para que los números no bailen al cambiar. */
+  .tabular {
+    font-variant-numeric: tabular-nums;
+  }
+
+  button,
+  a,
+  [role="button"],
+  label,
+  summary {
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+  }
+
+  button:not(:disabled),
+  [role="button"],
+  summary {
+    cursor: pointer;
+  }
+
+  :focus-visible {
+    outline: 3px solid var(--focus-ring, var(--color-mustard));
+    outline-offset: 3px;
+    border-radius: 6px;
+  }
+
+  input,
+  textarea,
+  select {
+    font-size: max(16px, 1em); /* evita el zoom automático de iOS */
+  }
+
+  .theme-room {
+    --focus-ring: var(--color-mustard);
+    background: var(--color-room);
+    color: var(--color-cream);
+    color-scheme: dark;
+    caret-color: var(--color-mustard);
+    scrollbar-color: var(--color-ember) var(--color-room);
+  }
+
+  .theme-room ::selection {
+    background: var(--color-mustard);
+    color: var(--color-coffee);
+  }
+
+  .theme-paper {
+    --focus-ring: var(--color-coffee);
+    background: var(--color-paper);
+    color: var(--color-ink);
+    color-scheme: light;
+    caret-color: var(--color-coffee);
+    scrollbar-color: var(--color-line-strong) var(--color-paper);
+  }
+
+  .theme-paper ::selection {
+    background: #fbe3a6;
+    color: var(--color-ink);
+  }
+
+  a {
+    text-underline-offset: 0.2em;
+    text-decoration-thickness: 1.5px;
+  }
+}
+
+@layer components {
+  /* Botón principal: píldora plana. Feedback de presión según Emil (scale 0.97, 160ms). */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    min-height: 3rem;
+    padding-inline: 1.5rem;
+    border-radius: var(--radius-pill);
+    font-weight: 600;
+    line-height: 1.1;
+    transition:
+      transform 160ms var(--ease-out-strong),
+      background-color 200ms ease,
+      color 200ms ease,
+      opacity 200ms ease;
+    user-select: none;
+  }
+  .btn:active:not(:disabled) {
+    transform: scale(0.97);
+  }
+  .btn:disabled {
+    cursor: not-allowed;
+  }
+
+  .btn-mustard {
+    background: var(--color-mustard);
+    color: var(--color-coffee);
+  }
+  @media (hover: hover) {
+    .btn-mustard:hover:not(:disabled) {
+      background: #ffc94a;
+    }
+  }
+  .btn-mustard:disabled {
+    background: var(--color-ember);
+    color: var(--color-cream-dim);
+  }
+
+  .btn-ghost-room {
+    color: var(--color-cream);
+    background: var(--color-room-2);
+  }
+  @media (hover: hover) {
+    .btn-ghost-room:hover:not(:disabled) {
+      background: var(--color-room-3);
+    }
+  }
+
+  .btn-coffee {
+    background: var(--color-coffee);
+    color: #fff8ee;
+  }
+  @media (hover: hover) {
+    .btn-coffee:hover:not(:disabled) {
+      background: #4d2e21;
+    }
+  }
+  .btn-coffee:disabled {
+    background: var(--color-line-strong);
+    color: var(--color-ink-soft);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 1ms !important;
+  }
+}
+
+/* El destello del logo titila de vez en cuando: el "fulgor". Pausado con movimiento reducido. */
+@keyframes fulgor-twinkle {
+  0%,
+  78%,
+  100% {
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+  }
+  84% {
+    transform: scale(0.72) rotate(-12deg);
+    opacity: 0.75;
+  }
+  91% {
+    transform: scale(1.14) rotate(8deg);
+    opacity: 1;
+  }
+}
+
+.fulgor-twinkle {
+  animation: fulgor-twinkle 5.2s var(--ease-in-out-strong) 1.2s infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fulgor-twinkle {
+    animation: none;
+  }
+}
+
+/* Cambio de fase del pedido (formulario → resumen → confirmación). */
+@keyframes phase-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+    filter: blur(4px);
+  }
+}
+.phase-in {
+  animation: phase-in 320ms var(--ease-out-strong) both;
+}
+
+/* La comanda de confirmación llega como un sello que se asienta: momento poco frecuente. */
+@keyframes ticket-in {
+  from {
+    opacity: 0;
+    transform: translateY(24px) rotate(-2.5deg) scale(0.97);
+  }
+  60% {
+    opacity: 1;
+  }
+}
+.ticket-in {
+  animation: ticket-in 560ms var(--ease-out-strong) both;
+}
+
+/* Cantidad: el número da un pequeño salto al cambiar. */
+@keyframes qty-bump {
+  from {
+    transform: translateY(-30%) scale(0.9);
+    opacity: 0.4;
+  }
+}
+.qty-bump {
+  animation: qty-bump 220ms var(--ease-out-strong);
+}
+
+/* Cinta de dígitos del contador de cupos (ver RollingNumber): un dígito por línea. */
+.digit-reel::before {
+  content: "0 1 2 3 4 5 6 7 8 9";
+  display: block;
+  width: 0.62em;
+  margin-inline: auto;
+  white-space: normal;
+  word-break: normal;
+}
+
+/* El lienzo del documento toma el color de la superficie (sin destellos blancos al hacer overscroll). */
+html:has(.theme-room) {
+  background: var(--color-room);
+}
+html:has(.theme-paper) {
+  background: var(--color-paper);
+}

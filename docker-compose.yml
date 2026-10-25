@@ -1,0 +1,24 @@
+# Base de datos local para desarrollo y pruebas.
+# Crea dos bases: fulgor (desarrollo) y fulgor_test (pruebas automatizadas).
+services:
+  db:
+    image: postgres:17-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: fulgor
+      POSTGRES_PASSWORD: fulgor_local_dev
+      POSTGRES_DB: fulgor
+      TZ: UTC
+    ports:
+      - "5433:5432"
+    volumes:
+      - fulgor_pg:/var/lib/postgresql/data
+      - ./docker/init-test-db.sql:/docker-entrypoint-initdb.d/init-test-db.sql:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U fulgor -d fulgor"]
+      interval: 3s
+      timeout: 3s
+      retries: 20
+
+volumes:
+  fulgor_pg:

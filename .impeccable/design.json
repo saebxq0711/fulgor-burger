@@ -1,0 +1,189 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-25T00:00:00Z",
+  "title": "Design System: Fulgor Burger",
+  "extensions": {
+    "colorMeta": {
+      "mustard": { "role": "primary", "displayName": "Mostaza Fulgor", "canonical": "#f5b82e", "tonalRamp": ["#3d2a04", "#694909", "#9a6c0d", "#c78d12", "#dfa216", "#f5b82e", "#fad27a", "#fdebc2"] },
+      "mustard-deep": { "role": "primary", "displayName": "Mostaza tostada", "canonical": "#dfa216" },
+      "mustard-hover": { "role": "primary", "displayName": "Mostaza encendida (hover)", "canonical": "#ffc94a" },
+      "coffee": { "role": "secondary", "displayName": "Café del logo", "canonical": "#3b2218", "tonalRamp": ["#1c0f09", "#28160e", "#3b2218", "#4d2e21", "#5e3d29", "#8a6a52", "#cfbba6", "#f7ecdf"] },
+      "coffee-hover": { "role": "secondary", "displayName": "Café hover", "canonical": "#4d2e21" },
+      "coffee-ink": { "role": "secondary", "displayName": "Tinta sobre café", "canonical": "#fff8ee" },
+      "room": { "role": "neutral", "displayName": "Sala", "canonical": "#1c0f09", "tonalRamp": ["#1c0f09", "#28160e", "#3b2218", "#4d2e21", "#5e3d29", "#8a6a52", "#cfbba6", "#f7ecdf"] },
+      "room-2": { "role": "neutral", "displayName": "Sala 2", "canonical": "#28160e" },
+      "room-3": { "role": "neutral", "displayName": "Sala 3", "canonical": "#3b2218" },
+      "ember": { "role": "neutral", "displayName": "Brasa", "canonical": "#5e3d29" },
+      "ember-line": { "role": "neutral", "displayName": "Línea de brasa", "canonical": "#8a6a52" },
+      "cream": { "role": "neutral", "displayName": "Crema", "canonical": "#f7ecdf" },
+      "cream-dim": { "role": "neutral", "displayName": "Crema apagada", "canonical": "#cfbba6" },
+      "alert": { "role": "neutral", "displayName": "Alerta sobre sala", "canonical": "#ffae9c" },
+      "paper": { "role": "neutral", "displayName": "Papel", "canonical": "#f8f7f5", "tonalRamp": ["#20150f", "#6a5d54", "#d3cbc3", "#e8e3de", "#f2eee9", "#f8f7f5", "#fbfaf9", "#ffffff"] },
+      "panel": { "role": "neutral", "displayName": "Panel", "canonical": "#ffffff" },
+      "line": { "role": "neutral", "displayName": "Línea", "canonical": "#e8e3de" },
+      "line-strong": { "role": "neutral", "displayName": "Línea fuerte", "canonical": "#d3cbc3" },
+      "ink": { "role": "neutral", "displayName": "Tinta", "canonical": "#20150f" },
+      "ink-soft": { "role": "neutral", "displayName": "Tinta suave", "canonical": "#6a5d54" },
+      "tint": { "role": "neutral", "displayName": "Matiz", "canonical": "#f2eee9" },
+      "ok": { "role": "status", "displayName": "Entregado / abierta", "canonical": "#23704a" },
+      "ok-tint": { "role": "status", "displayName": "Tinte ok", "canonical": "#e3f2e9" },
+      "warn": { "role": "status", "displayName": "Agendado / agotada", "canonical": "#8a5300" },
+      "warn-tint": { "role": "status", "displayName": "Tinte warn", "canonical": "#fdf0d3" },
+      "danger": { "role": "status", "displayName": "Peligro", "canonical": "#b3261e" },
+      "danger-tint": { "role": "status", "displayName": "Tinte peligro", "canonical": "#fbe5e3" },
+      "info": { "role": "status", "displayName": "Confirmado / abre pronto", "canonical": "#2f5d8a" },
+      "info-tint": { "role": "status", "displayName": "Tinte info", "canonical": "#e4eef8" }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Solo el h1 del héroe con el nombre del producto; segunda línea a 0.62em en crema apagada." },
+      "headline": { "displayName": "Headline", "purpose": "Títulos de sección de la página pública." },
+      "ticket-code": { "displayName": "Código de comanda", "purpose": "El código impreso de la confirmación; tracking positivo y cifras tabulares." },
+      "price": { "displayName": "Precio", "purpose": "Precio del héroe, en mostaza." },
+      "title": { "displayName": "Title", "purpose": "Leyendas de cada paso del formulario y total." },
+      "lead": { "displayName": "Lead", "purpose": "Pasos de Cómo funciona y preguntas." },
+      "body-lg": { "displayName": "Body large", "purpose": "Descripciones y respuestas, 40–44ch." },
+      "body": { "displayName": "Body", "purpose": "Texto general." },
+      "label": { "displayName": "Label", "purpose": "Etiquetas de campo, botones, títulos de tarjeta de cupo." },
+      "panel-title": { "displayName": "Título de panel", "purpose": "Título de página del panel administrativo." },
+      "panel-body": { "displayName": "Texto de panel", "purpose": "Texto y navegación del panel." },
+      "panel-meta": { "displayName": "Meta de panel", "purpose": "Pastillas de estado, ayudas y metadatos." }
+    },
+    "shadows": [],
+    "motion": [
+      { "name": "ease-out-strong", "value": "cubic-bezier(0.23, 1, 0.32, 1)", "purpose": "Entradas, respuestas y cambios de dato (dígitos, destellos, fases, comanda)." },
+      { "name": "ease-in-out-strong", "value": "cubic-bezier(0.77, 0, 0.175, 1)", "purpose": "El titileo del destello del logo." },
+      { "name": "ease-drawer", "value": "cubic-bezier(0.32, 0.72, 0, 1)", "purpose": "Reservada para cajones/paneles deslizantes." },
+      { "name": "press", "value": "transform scale(0.97) 160ms ease-out-strong", "purpose": "Feedback de presión de todo botón." },
+      { "name": "color-change", "value": "200ms ease", "purpose": "Cambio de fondo y color de botones y bordes." },
+      { "name": "phase-in", "value": "320ms ease-out-strong; desde opacity 0, translateY(12px), blur(4px)", "purpose": "Cambio de fase del pedido (formulario, resumen)." },
+      { "name": "ticket-in", "value": "560ms ease-out-strong; desde opacity 0, translateY(24px) rotate(-2.5deg) scale(0.97)", "purpose": "La comanda de confirmación se asienta como un sello. Momento único." },
+      { "name": "qty-bump", "value": "220ms ease-out-strong; desde translateY(-30%) scale(0.9) opacity 0.4", "purpose": "El número de cantidad salta al cambiar." },
+      { "name": "digit-roll", "value": "transform 700ms ease-out-strong", "purpose": "La cinta 0–9 del contador de cupos; solo con cambio real del servidor." },
+      { "name": "cupo-mark", "value": "color, transform, opacity 500ms ease-out-strong", "purpose": "Un destello se apaga (scale 0.78) cuando alguien toma el cupo." },
+      { "name": "fulgor-twinkle", "value": "5.2s ease-in-out-strong 1.2s infinite", "purpose": "El destello del logo titila de vez en cuando en el héroe; se detiene con movimiento reducido." }
+    ],
+    "breakpoints": [
+      { "name": "sm", "value": "640px" },
+      { "name": "md", "value": "768px" },
+      { "name": "lg", "value": "1024px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Botón principal mostaza",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "La acción principal sobre la sala: Agendar la mía, Revisar pedido, Confirmar.",
+      "html": "<button class=\"ds-btn-mustard\">Agendar la mía</button>",
+      "css": ".ds-btn-mustard { display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; height: 3.5rem; padding: 0 2rem; border: none; border-radius: 999px; background: var(--color-mustard, #f5b82e); color: var(--color-coffee, #3b2218); font-family: Rubik, ui-sans-serif, system-ui, sans-serif; font-size: 1.125rem; font-weight: 600; line-height: 1.1; cursor: pointer; transition: transform 160ms cubic-bezier(0.23, 1, 0.32, 1), background-color 200ms ease, color 200ms ease; } .ds-btn-mustard:hover { background: #ffc94a; } .ds-btn-mustard:active { transform: scale(0.97); } .ds-btn-mustard:focus-visible { outline: 3px solid #f5b82e; outline-offset: 3px; } .ds-btn-mustard:disabled { background: #5e3d29; color: #cfbba6; cursor: not-allowed; }"
+    },
+    {
+      "name": "Botón fantasma de sala",
+      "kind": "button",
+      "refersTo": "button-ghost-room",
+      "description": "Acción secundaria sobre la sala: Hacer otro pedido, botones de cantidad.",
+      "html": "<button class=\"ds-btn-ghost-room\">Hacer otro pedido</button>",
+      "css": ".ds-btn-ghost-room { display: inline-flex; align-items: center; justify-content: center; height: 3.5rem; padding: 0 1.75rem; border: none; border-radius: 999px; background: #28160e; color: #f7ecdf; font-family: Rubik, ui-sans-serif, system-ui, sans-serif; font-size: 1.125rem; font-weight: 600; cursor: pointer; transition: transform 160ms cubic-bezier(0.23, 1, 0.32, 1), background-color 200ms ease; } .ds-btn-ghost-room:hover { background: #3b2218; } .ds-btn-ghost-room:active { transform: scale(0.97); } .ds-btn-ghost-room:focus-visible { outline: 3px solid #f5b82e; outline-offset: 3px; }"
+    },
+    {
+      "name": "Botón café del panel",
+      "kind": "button",
+      "refersTo": "button-panel-primary",
+      "description": "Acción primaria en el panel administrativo claro.",
+      "html": "<button class=\"ds-btn-panel\">Guardar cambios</button>",
+      "css": ".ds-btn-panel { display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; min-height: 2.5rem; padding: 0 1rem; border: none; border-radius: 0.5rem; background: #3b2218; color: #fff8ee; font-family: Rubik, ui-sans-serif, system-ui, sans-serif; font-size: 0.875rem; font-weight: 600; cursor: pointer; transition: background-color 150ms, transform 150ms; } .ds-btn-panel:hover { background: #4d2e21; } .ds-btn-panel:active { transform: scale(0.97); } .ds-btn-panel:focus-visible { outline: 3px solid #3b2218; outline-offset: 3px; }"
+    },
+    {
+      "name": "Campo de texto de sala",
+      "kind": "input",
+      "refersTo": "input-room",
+      "description": "Campos del pedido público: nombre, WhatsApp, dirección.",
+      "html": "<label class=\"ds-field\"><span class=\"ds-field-label\">WhatsApp</span><input class=\"ds-input-room\" type=\"tel\" placeholder=\"300 123 4567\"></label>",
+      "css": ".ds-field { display: grid; gap: 0.5rem; background: #1c0f09; padding: 1rem; font-family: Rubik, ui-sans-serif, system-ui, sans-serif; color: #f7ecdf; } .ds-field-label { font-size: 1rem; font-weight: 600; } .ds-input-room { height: 3.5rem; padding: 0 1rem; border: 2px solid #8a6a52; border-radius: 1rem; background: #1c0f09; color: #f7ecdf; font: inherit; font-size: 1.125rem; transition: border-color 200ms; } .ds-input-room::placeholder { color: rgba(207, 187, 166, 0.8); } .ds-input-room:hover { border-color: #cfbba6; } .ds-input-room:focus, .ds-input-room:focus-visible { outline: none; border-color: #f5b82e; }"
+    },
+    {
+      "name": "Opción de día",
+      "kind": "chip",
+      "refersTo": "slot-option",
+      "description": "Radio en forma de tarjeta para elegir la fecha de entrega, con el cupo a la derecha.",
+      "html": "<div class=\"ds-slots\"><label class=\"ds-slot ds-slot-on\"><span class=\"ds-slot-dot\">&#10003;</span><span class=\"ds-slot-body\"><b>Domingo, 1 de noviembre</b><small>12:00 p. m. – 6:00 p. m.</small></span><span class=\"ds-slot-cupo\">9 cupos</span></label><label class=\"ds-slot\"><span class=\"ds-slot-dot\"></span><span class=\"ds-slot-body\"><b>Domingo, 8 de noviembre</b><small>12:00 p. m. – 6:00 p. m.</small></span><span class=\"ds-slot-cupo\">20 cupos</span></label></div>",
+      "css": ".ds-slots { display: grid; gap: 0.75rem; padding: 1rem; background: #1c0f09; font-family: Rubik, ui-sans-serif, system-ui, sans-serif; } .ds-slot { display: flex; align-items: center; gap: 1rem; min-height: 4.5rem; padding: 1rem 1.25rem; border: 2px solid #8a6a52; border-radius: 1rem; background: #28160e; color: #f7ecdf; cursor: pointer; transition: background-color 200ms, border-color 200ms; } .ds-slot:hover { border-color: #cfbba6; } .ds-slot-on, .ds-slot-on:hover { border-color: #f5b82e; background: #3b2218; } .ds-slot-dot { display: grid; place-items: center; width: 1.5rem; height: 1.5rem; flex-shrink: 0; border: 2px solid #cfbba6; border-radius: 999px; font-size: 0.8rem; font-weight: 800; color: #3b2218; } .ds-slot-on .ds-slot-dot { border-color: #f5b82e; background: #f5b82e; } .ds-slot-body { flex: 1; display: grid; gap: 0.25rem; } .ds-slot-body b { font-size: 1.125rem; font-weight: 600; } .ds-slot-body small { font-size: 1rem; color: #cfbba6; font-variant-numeric: tabular-nums; } .ds-slot-cupo { font-weight: 600; color: #f5b82e; font-variant-numeric: tabular-nums; }"
+    },
+    {
+      "name": "Tira de cupos (CupoMarks)",
+      "kind": "custom",
+      "refersTo": "card-room",
+      "description": "Un destello del logo por hamburguesa, filas de 10; encendido = disponible, brasa y reducido = tomado. El número exacto siempre en texto al lado.",
+      "html": "<div class=\"ds-cupo\"><div class=\"ds-cupo-head\"><b>Domingo, 1 de noviembre</b><span>12:00 p. m. – 6:00 p. m.</span></div><ul class=\"ds-marks\"><li class=\"on\"></li><li class=\"on\"></li><li class=\"on\"></li><li class=\"on\"></li><li class=\"on\"></li><li class=\"on\"></li><li class=\"on\"></li><li class=\"on\"></li><li class=\"on\"></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li></ul><p class=\"ds-cupo-text\"><strong>Quedan 9 de 20</strong>. Pedidos hasta el sábado, 8:00 p. m.</p></div>",
+      "css": ".ds-cupo { display: grid; gap: 1rem; padding: 1.5rem; border-radius: 1.75rem; background: #28160e; color: #f7ecdf; font-family: Rubik, ui-sans-serif, system-ui, sans-serif; } .ds-cupo-head { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; flex-wrap: wrap; } .ds-cupo-head b { font-weight: 600; } .ds-cupo-head span { font-size: 0.875rem; color: #cfbba6; font-variant-numeric: tabular-nums; } .ds-marks { display: grid; grid-template-columns: repeat(10, max-content); gap: 10px 12px; margin: 0; padding: 0; list-style: none; width: fit-content; } .ds-marks li { width: 22px; height: 22px; background: #5e3d29; transform: scale(0.78); clip-path: polygon(50% 0%, 61% 39%, 100% 50%, 61% 61%, 50% 100%, 39% 61%, 0% 50%, 39% 39%); transition: background-color 500ms cubic-bezier(0.23, 1, 0.32, 1), transform 500ms cubic-bezier(0.23, 1, 0.32, 1); } .ds-marks li.on { background: #f5b82e; transform: scale(1); } .ds-cupo-text { margin: 0; color: #cfbba6; } .ds-cupo-text strong { color: #f5b82e; font-weight: 600; }"
+    },
+    {
+      "name": "Contador de dígitos (RollingNumber)",
+      "kind": "custom",
+      "description": "Cada dígito recorta una cinta 0–9 que se desplaza 700ms cuando el servidor reporta un cambio real. Pasa el puntero para ver el giro.",
+      "html": "<span class=\"ds-roll\"><span class=\"ds-digit\"><span class=\"ds-reel\" style=\"--d:1\"></span></span><span class=\"ds-digit\"><span class=\"ds-reel\" style=\"--d:2\"></span></span></span>",
+      "css": ".ds-roll { display: inline-flex; padding: 0.5rem 1rem; background: #28160e; color: #f5b82e; font-family: Rubik, ui-sans-serif, system-ui, sans-serif; font-size: 3rem; font-weight: 700; line-height: 1.2; font-variant-numeric: tabular-nums; border-radius: 1rem; } .ds-digit { position: relative; display: inline-block; overflow: hidden; height: 1.2em; width: 0.62em; } .ds-reel { position: absolute; inset: 0 0 auto 0; text-align: center; transform: translateY(calc(var(--d) * -10%)); transition: transform 700ms cubic-bezier(0.23, 1, 0.32, 1); } .ds-reel::before { content: \"0 1 2 3 4 5 6 7 8 9\"; display: block; width: 0.62em; margin-inline: auto; white-space: normal; } .ds-roll:hover .ds-reel { transform: translateY(calc((var(--d) - 1) * -10%)); }"
+    },
+    {
+      "name": "Comanda de confirmación",
+      "kind": "card",
+      "refersTo": "ticket",
+      "description": "Ticket mostaza con el código impreso y el sticker del logo girado 9° como sello; entra con ticket-in.",
+      "html": "<div class=\"ds-ticket-wrap\"><div class=\"ds-ticket\"><span class=\"ds-sticker\" aria-hidden=\"true\"></span><h3>¡Listo, Sofía! Tu pedido quedó agendado.</h3><p class=\"ds-ticket-k\">Código de pedido</p><p class=\"ds-ticket-code\">FB-Q3L2P7P</p><dl><div><dt>Entrega</dt><dd>Domingo, 1 de noviembre</dd></div><div><dt>Total</dt><dd>$ 28.000 · 1 hamburguesa</dd></div></dl></div></div>",
+      "css": ".ds-ticket-wrap { padding: 3rem 1rem 1rem; background: #1c0f09; } .ds-ticket { position: relative; padding: 2.5rem 2rem 2rem; border-radius: 2rem; background: #f5b82e; color: #3b2218; font-family: Rubik, ui-sans-serif, system-ui, sans-serif; animation: ds-ticket-in 560ms cubic-bezier(0.23, 1, 0.32, 1) both; } .ds-ticket h3 { max-width: 16ch; margin: 0; padding-right: 6rem; font-size: 2rem; font-weight: 800; line-height: 0.95; letter-spacing: -0.03em; } .ds-sticker { position: absolute; top: -2rem; right: 2rem; width: 6rem; height: 6rem; border-radius: 1.25rem; background: #3b2218; transform: rotate(9deg); } .ds-ticket-k { margin: 2rem 0 0.25rem; font-weight: 500; } .ds-ticket-code { margin: 0; font-size: 3.5rem; font-weight: 800; line-height: 1; letter-spacing: 0.01em; font-variant-numeric: tabular-nums; white-space: nowrap; } .ds-ticket dl { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 2rem 0 0; } .ds-ticket dt { font-weight: 500; } .ds-ticket dd { margin: 0.25rem 0 0; font-weight: 600; } @keyframes ds-ticket-in { from { opacity: 0; transform: translateY(24px) rotate(-2.5deg) scale(0.97); } 60% { opacity: 1; } } @media (prefers-reduced-motion: reduce) { .ds-ticket { animation: none; } }"
+    },
+    {
+      "name": "Navegación de cabecera",
+      "kind": "nav",
+      "description": "Wordmark mostaza a la izquierda; enlaces en crema apagada; Agendar siempre visible en mostaza subrayado.",
+      "html": "<header class=\"ds-nav\"><span class=\"ds-nav-mark\">FULGOR</span><nav><a href=\"#\">Cómo funciona</a><a href=\"#\">Preguntas</a><a href=\"#\" class=\"ds-nav-cta\">Agendar</a></nav></header>",
+      "css": ".ds-nav { display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; height: 4.25rem; padding: 0 2rem; background: #1c0f09; font-family: Rubik, ui-sans-serif, system-ui, sans-serif; } .ds-nav-mark { color: #f5b82e; font-weight: 800; font-size: 1.5rem; letter-spacing: -0.02em; } .ds-nav nav { display: flex; align-items: center; gap: 0.5rem; } .ds-nav a { padding: 0.5rem 0.75rem; border-radius: 999px; color: #cfbba6; text-decoration: none; transition: color 150ms; } .ds-nav a:hover { color: #f7ecdf; } .ds-nav a:focus-visible { outline: 3px solid #f5b82e; outline-offset: 3px; } .ds-nav .ds-nav-cta { color: #f5b82e; font-weight: 600; text-decoration: underline; text-decoration-color: rgba(245, 184, 46, 0.4); text-decoration-thickness: 2px; text-underline-offset: 0.3em; } .ds-nav .ds-nav-cta:hover { color: #f5b82e; text-decoration-color: #f5b82e; }"
+    },
+    {
+      "name": "Pastilla de estado del panel",
+      "kind": "chip",
+      "refersTo": "status-pill",
+      "description": "Estado de pedido o fecha en el panel: texto oscuro sobre su tinte.",
+      "html": "<div class=\"ds-pills\"><span class=\"ds-pill ds-pill-warn\">Agendado</span><span class=\"ds-pill ds-pill-info\">Confirmado</span><span class=\"ds-pill ds-pill-ok\">Entregado</span><span class=\"ds-pill ds-pill-off\">Cancelado</span></div>",
+      "css": ".ds-pills { display: flex; flex-wrap: wrap; gap: 0.5rem; padding: 1rem; background: #f8f7f5; font-family: Rubik, ui-sans-serif, system-ui, sans-serif; } .ds-pill { display: inline-flex; align-items: center; height: 1.5rem; padding: 0 0.625rem; border-radius: 999px; font-size: 13px; font-weight: 500; white-space: nowrap; } .ds-pill-warn { background: #fdf0d3; color: #8a5300; } .ds-pill-info { background: #e4eef8; color: #2f5d8a; } .ds-pill-ok { background: #e3f2e9; color: #23704a; } .ds-pill-off { background: #f2eee9; color: #6a5d54; text-decoration: line-through; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "La sala a media luz",
+    "overview": "Fulgor significa brillo, y el sistema lo toma literal: la página pública es una sala café casi negra donde solo se enciende lo que importa ahora mismo. La hamburguesa del logo, los cupos que quedan, el precio y la acción principal llevan mostaza; todo lo demás es tinta crema sobre café. No hay fotografía genérica, ni tarjetas de menú, ni testimonios: una sola hamburguesa, por tanda, con el número exacto a la vista.\n\nEl mundo es plano y redondeado. Superficies tonales en lugar de sombras, botones píldora, tarjetas con esquinas generosas (28px) que hacen eco de las terminales del wordmark FULGOR. La tipografía es una sola familia, Rubik, trabajada en dos extremos: titulares en peso 800 con interlineado apretado y tracking negativo, texto corrido en 400 con aire. El movimiento es escaso y honesto: los dígitos giran solo cuando el servidor reporta un cambio real, el destello del logo titila de vez en cuando, y la confirmación aterriza como una comanda sellada.\n\nEl panel administrativo (Operate) es el mismo mundo con la luz encendida: papel cálido, tinta café, la misma Rubik y la misma tira de destellos, pero más denso, con controles de 40px y esquinas de 8px. El café del logo pasa a ser el color de acción; la mostaza queda para los cupos.",
+    "keyCharacteristics": [
+      "Sala café profunda (room) con tinta crema; mostaza solo para lo encendido.",
+      "Una familia (Rubik), extremos de peso 800 / 400, cifras tabulares en todo número que cambia.",
+      "Plano: cero sombras, cero degradados; profundidad por pasos tonales room → room-2 → room-3.",
+      "Píldoras y esquinas grandes en lo público; esquinas de 8px y bordes de 1px en el panel.",
+      "Elementos propios: la tira de cupos con destellos del logo, el contador de dígitos que gira y la comanda mostaza con el sticker como sello."
+    ],
+    "rules": [
+      { "name": "The Lo Encendido Rule", "body": "La mostaza solo marca lo que está vivo o es la acción: la hamburguesa, los cupos disponibles, el precio, el botón principal, el enlace \"Agendar\" y la comanda. Nunca como fondo de sección, nunca en texto corrido, nunca en iconos decorativos. Si algo mostaza no es accionable ni un dato vivo, está mal.", "section": "colors" },
+      { "name": "The Una Mostaza Grande Rule", "body": "Por pantalla hay como máximo una superficie mostaza grande: el botón principal en el flujo, o la comanda en la confirmación. La comanda reemplaza al botón como protagonista; el botón de WhatsApp que le sigue es secundario en jerarquía aunque sea mostaza.", "section": "colors" },
+      { "name": "The Apagado No Es Gris Rule", "body": "Lo no disponible baja a brasa (ember) o a crema apagada, nunca a gris neutro ni a opacidad sobre la mostaza. Agotado se dice en crema, con palabras, no con color.", "section": "colors" },
+      { "name": "The Cifra Quieta Rule", "body": "Todo número que puede cambiar en pantalla (cupos, precios, totales, horas, cantidades, códigos) lleva cifras tabulares, para que no baile al actualizarse.", "section": "typography" },
+      { "name": "The Sin Mayúsculas Rule", "body": "El sistema no usa versales ni tracking ancho en etiquetas; la jerarquía se hace con peso y tamaño. El único espaciado amplio es el BURGER del logo, que es arte, no tipografía.", "section": "typography" },
+      { "name": "The Tono Antes Que Sombra Rule", "body": "Para separar una superficie, sube un paso en la escala room; nunca agregues box-shadow. Lo elegido se marca con borde mostaza de 2px más room-3, no con sombra.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do reservar la mostaza para lo encendido: la hamburguesa, los cupos disponibles, el precio, la acción principal y la comanda.",
+      "Do separar superficies subiendo un paso tonal (room → room-2 → room-3) en vez de sombrear.",
+      "Do usar cifras tabulares en todo número que pueda cambiar.",
+      "Do mostrar el cupo con la tira de destellos y, siempre al lado, el número exacto en texto (\"Quedan 9 de 20\").",
+      "Do mover dígitos solo cuando cambia el dato del servidor; el movimiento es una noticia, no una decoración.",
+      "Do usar ease-out-strong (cubic-bezier(0.23, 1, 0.32, 1)) para entradas y respuestas, y presionar botones a scale(0.97) en 160ms.",
+      "Do desactivar animaciones con prefers-reduced-motion: el titileo se detiene, los dígitos cambian sin giro.",
+      "Do usar bordes de 2px ember-line en controles sobre la sala para cumplir 3:1."
+    ],
+    "donts": [
+      "Don't usar box-shadow ni degradados en ninguna superficie.",
+      "Don't pintar fondos de sección, texto corrido o iconos decorativos en mostaza.",
+      "Don't presentar la ilustración del logo como fotografía del producto; la foto real solo llega desde el panel.",
+      "Don't animar cupos al cargar ni inventar urgencia con contadores; si el servidor no cambió, nada gira.",
+      "Don't usar versales ni tracking ancho en etiquetas.",
+      "Don't usar líneas de 1px en la superficie pública; los bordes allí son de 2px o no existen.",
+      "Don't introducir una segunda familia tipográfica; el contraste sale del peso de Rubik."
+    ]
+  }
+}
